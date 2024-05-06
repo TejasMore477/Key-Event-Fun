@@ -12,26 +12,35 @@ document.addEventListener("keydown", event => {
 
         switch (event.key) {
             case "ArrowUp":
-                y -= moveAmount;
+                if (y - moveAmount >= 0) {
+                    y -= moveAmount;
+                }
                 break;
 
             case "ArrowDown":
-                y += moveAmount;
+                if (y + moveAmount + box.offsetHeight <= window.innerHeight) {
+                    y += moveAmount;
+                }
                 break;
 
             case "ArrowLeft":
-                x -= moveAmount;
+                if (x - moveAmount >= 0) {
+                    x -= moveAmount;
+                }
                 break;
 
             case "ArrowRight":
-                x += moveAmount;
+                if (x + moveAmount + box.offsetWidth <= window.innerWidth) {
+                    x += moveAmount;
+                }
                 break;
 
         }
 
         box.style.top = `${y}px`;
         box.style.left = `${x}px`;
-    } 
+        
+    }  
     
     else {
         box.textContent = "🙈";
