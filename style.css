@@ -9,3 +9,13 @@ html, body{
     width: 100%;
 }
 
+#box{
+    height: 7rem;
+    width: 7rem;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: absolute;
+}
